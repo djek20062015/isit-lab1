@@ -102,9 +102,9 @@
  
 Диаграмма прецедентов использования (Use-Case Diagram) отражает основные категории пользователей и выполняемые ими действия:
  
-(diagrams/images/subject-area.png)
+![Диаграмма предметной области UML Use-Case](diagrams/images/subject-area.png)
  
-[diagrams/subject-area.drawio](diagrams/subject-area.drawio)
+
  
 ---
  
