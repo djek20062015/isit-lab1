@@ -1,6 +1,6 @@
 # isit-lab1
 Лабораторная работа №1
-# Лабораторная работа №1
+
 ## Анализ предметной области информационной системы
  
 **Вариант:** 5 (Система управления мероприятиями)  
@@ -102,9 +102,9 @@
  
 Диаграмма прецедентов использования (Use-Case Diagram) отражает основные категории пользователей и выполняемые ими действия:
  
-![Диаграмма предметной области UML Use-Case](diagrams/images/subject-area.png)
+(diagrams/images/subject-area.png)
  
-*Исходный файл диаграммы:* [diagrams/subject-area.drawio](diagrams/subject-area.drawio)
+[diagrams/subject-area.drawio](diagrams/subject-area.drawio)
  
 ---
  
