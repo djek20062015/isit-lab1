@@ -98,7 +98,7 @@
  
 ![Диаграмма вариантов использования](diagrams/use-cases.png)
  
-*Исходный файл диаграммы:* [diagrams/use-cases.drawio](diagrams/use-cases.drawio) *(или `.puml`)*
+*Исходный файл диаграммы:* [lab2/diagrams/subject-area.drawio](lab2/diagrams/subject-area.drawio)*
  
 **Описание диаграммы:**
 * **Актёры:** `Гость`, `Участник` (наследует права гостя), `Организатор`, `Администратор`.
