@@ -128,7 +128,7 @@
  
 ![Диаграмма компонентов](diagrams/architecture.png)
  
-*Исходный файл диаграммы:* [diagrams/architecture.drawio](diagrams/architecture.drawio) *(или `.puml`)*
+*Исходный файл диаграммы:* [diagrams/architecture.puml](diagrams/architecture.puml)*
  
 **Описание архитектуры:**
 Пользователи взаимодействуют с системой через веб-браузер (**Web Application**). Клиент отправляет запросы по протоколу HTTPS на **API Gateway**, который перенаправляет их соответствующим микросервисам или модулям бэкенда (**Auth Service**, **Event Service**, **Booking Service**). Модули обращаются к единой реляционной **Базе данных** посредством SQL-запросов. При создании заявки **Booking Service** генерирует событие для **Notification Service**, который по протоколу SMTP отправляет письма через **Email-сервер**.
