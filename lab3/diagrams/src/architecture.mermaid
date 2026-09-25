@@ -1,0 +1,24 @@
+graph TD
+    subgraph Frontend ["Frontend (Web/Mobile)"]
+        UI["Пользовательский интерфейс"]
+    end
+ 
+    subgraph Backend ["Backend (Server)"]
+        API["API Контроллеры"]
+        Auth["Модуль аутентификации"]
+        Services["Бизнес-логика (Сервисы)"]
+        Tickets["Модуль генерации билетов\n[Индивидуальная фича]"]
+        Repos["Репозитории (Data Access)"]
+    end
+ 
+    subgraph DatabaseLayer ["Database"]
+        DB[(PostgreSQL)]
+    end
+ 
+    UI -->|HTTP / REST| API
+    API --> Auth
+    API --> Services
+    Services --> Repos
+    Services -.->|Асинхронный вызов| Tickets
+    Tickets -.->|Сохранение файла| Repos
+    Repos -->|SQL| DB
