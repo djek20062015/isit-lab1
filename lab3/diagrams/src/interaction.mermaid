@@ -1,0 +1,26 @@
+sequenceDiagram
+    autonumber
+    actor User as Участник
+    participant UI as Frontend
+    participant API as Контроллеры
+    participant Service as Бизнес-логика
+    participant Repo as Репозитории
+    participant Ticket as Модуль билетов
+    participant DB as База Данных
+ 
+    User->>UI: Клик "Зарегистрироваться"
+    UI->>API: POST /api/events/{id}/register
+    API->>Service: registerUser(eventId, userId)
+    Service->>Repo: checkCapacity(eventId)
+    Repo->>DB: SELECT count FROM registrations
+    DB-->>Repo: Места есть
+    Service->>Repo: createRegistration()
+    Repo->>DB: INSERT INTO registrations
+    Service-->>API: Успех (200 OK)
+    API-->>UI: Показ сообщения об успехе
+    UI-->>User: "Вы успешно зарегистрированы"
+    
+    %% Асинхронный процесс
+    Service-)Ticket: Асинхронная генерация билета
+    Ticket->>Ticket: Создание PDF + QR код
+    Ticket->>User: Отправка билета на Email
