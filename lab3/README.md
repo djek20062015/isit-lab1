@@ -76,15 +76,15 @@ project/
 
 ### Диаграмма архитектуры системы
 
-| Диаграмма архитектуры1(./diagrams/architecture.png)
+![Диаграмма архитектуры системы](diagrams/src/architecture.png)
 
-|**Исходник:** [diagrams/scc/architecture dravio](./diagrams/src/architecture.drawio)
+|**Исходник:** ![Диаграмма архитектуры системы](diagrams/src/architecture.mermaid)
 
 ### Диаграмма взаимодействия компонетов
 
-![Диаграмма взаимодействия](...)
+![Диаграмма взаимодействия компонетов](diagrams/src/interaction.png)
 
-**Исходник:** [diagrams/scc/interaction.puml 1(./diagrams/src/interaction.pumt)
+|**Исходник:** ![Диаграмма взаимодействия компонетов](diagrams/src/interaction.mermaid)
 
 ## Вывод
 
