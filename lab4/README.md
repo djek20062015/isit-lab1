@@ -51,6 +51,9 @@ graph TD
     EventsList -->|Клик на лого/главная| Dashboard
     EventDetail -->|Назад в каталог| EventsList
 ```
+![Схема навигации между экранами](diagrams/navigation/navigation.png)
+
+|**Исходник:** ![Диаграмма архитектуры системы](diagrams/navigation/navigation.puml)
 
 ---
 
