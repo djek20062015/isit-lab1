@@ -35,21 +35,18 @@
 
 ```mermaid
 graph TD
-    Login["1. Экран авторизации (/login)"] -->|Успешный вход| Dashboard["2. Главная страница / Дашборд (/dashboard)"]
-    
-    Dashboard -->|Клик 'Все события'| EventsList["3. Каталог мероприятий (/events)"]
-    Dashboard -->|Клик 'Создать' (Только Организатор)| EventCreate["5. Создание мероприятия (/events/create)"]
-    
-    EventsList -->|Выбор карточки| EventDetail["4. Карточка мероприятия (/events/{id})"]
-    
-    EventDetail -->|Успешная регистрация| TicketModal["Модальное окно: Билет с QR-кодом"]
-    
-    EventCreate -->|Клик 'Опубликовать'| EventDetail
-    
-    TicketModal -->|Клик 'В мои билеты'| Dashboard
-    
-    EventsList -->|Клик на лого/главная| Dashboard
-    EventDetail -->|Назад в каталог| EventsList
+    Login["1. Экран авторизации /login"] -->|"Успешный вход"| Dashboard["2. Главная страница / Дашборд /dashboard"]
+ 
+    Dashboard -->|"Клик 'Все события'"| EventsList["3. Каталог мероприятий /events"]
+    Dashboard -->|"Клик 'Создать' (Только Организатор)"| EventCreate["5. Создание мероприятия /events/create"]
+ 
+    EventsList -->|"Выбор карточки"| EventDetail["4. Карточка мероприятия /events/{id}"]
+ 
+    EventDetail -->|"Успешная регистрация"| TicketModal["Модальное окно: Билет с QR-кодом"]
+ 
+    EventCreate -->|"Клик 'Опубликовать'"| EventDetail
+ 
+    TicketModal -->|"Клик 'В мои билеты'"| Dashboard
 ```
 ![Схема навигации между экранами](diagrams/navigation/navigation.png)
 
