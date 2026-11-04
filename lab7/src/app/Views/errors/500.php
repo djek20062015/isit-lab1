@@ -1,0 +1,1 @@
+<div class="error-page"><span class="eyebrow">Ошибка 500</span><h1>Внутренняя ошибка сервера</h1><a class="button" href="/">На главную</a></div>
