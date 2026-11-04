@@ -1,0 +1,1 @@
+</main><footer class="container">EventManager · Лабораторная работа №6 · PHP MVC</footer></body></html>
