@@ -1,0 +1,1 @@
+<div class="error-page"><span class="eyebrow">Ошибка 404</span><h1>Страница не найдена</h1><p>Проверьте адрес или вернитесь на главную.</p><a class="button" href="/">На главную</a></div>

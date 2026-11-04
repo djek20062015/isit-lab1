@@ -1,0 +1,1 @@
+<div class="error-page"><span class="eyebrow">Ошибка 405</span><h1>Метод не поддерживается</h1><p>Для этого адреса выбран неверный HTTP-метод.</p><a class="button" href="/">На главную</a></div>

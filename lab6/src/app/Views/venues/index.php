@@ -1,0 +1,1 @@
+<span class="eyebrow">Локации</span><h1>Площадки</h1><div class="cards venues"><?php foreach ($venues as $venue): ?><a class="card venue" href="/venues/<?= e($venue['id']) ?>"><strong><?= e($venue['name']) ?></strong><span><?= e($venue['address']) ?></span><span>Вместимость: <?= e($venue['capacity']) ?> чел.</span></a><?php endforeach; ?></div>
