@@ -1,70 +1,8 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <title>Задачи команды</title>
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-  <div class="container">
-    <h1>Задачи команды</h1>
-
-    <!-- Форма: сюда пользователь вводит данные новой задачи -->
-    <form id="task-form" class="card">
-      <h2>Новая задача</h2>
-
-      <label for="task-title">Название</label>
-      <input id="task-title" type="text">
-      <div class="error" id="error-title"></div>
-
-      <label for="task-priority">Приоритет</label>
-      <select id="task-priority">
-        <option value="low">Низкий</option>
-        <option value="medium" selected>Средний</option>
-        <option value="high">Высокий</option>
-      </select>
-
-      <br><br>
-      <button type="submit" class="primary">Добавить в список</button>
-    </form>
-
-    <h2>Список задач</h2>
-
-    <!-- Элементы управления: список для выбора, поле ввода, кнопка -->
-    <div class="toolbar">
-      <select id="status-filter">
-        <option value="">Все статусы</option>
-        <option value="new">Новая</option>
-        <option value="in_progress">В работе</option>
-        <option value="done">Выполнена</option>
-      </select>
-      <input id="search-input" type="text" placeholder="Поиск по названию...">
-      <button id="refresh-button">Загрузить с сервера</button>
-    </div>
-
-    <!-- Область отображения информации: «Загрузка…», «Ничего не найдено», ошибки -->
-    <div id="info" class="message">Нажмите «Загрузить с сервера»</div>
-
-    <!-- Таблицу заполняет JavaScript -->
-    <table id="task-table" hidden>
-      <thead>
-        <tr>
-          <th>№</th>
-          <th>Название</th>
-          <th>Статус</th>
-          <th>Приоритет</th>
-          <th>Действия</th>
-        </tr>
-      </thead>
-      <tbody id="task-body"></tbody>
-    </table>
-
-    <p>Задач на странице: <strong id="counter">0</strong></p>
-  </div>
-
-  <!-- Скрипты подключаются в конце страницы, когда вся разметка уже загружена -->
-  <script src="js/mock-data.js"></script>   <!-- данные и таблица запросов учебного сервера (редактируете вы) -->
-  <script src="js/mock-api.js"></script>    <!-- «движок» учебного сервера (не менять) -->
-  <script src="js/app.js"></script>
-</body>
-</html>
+<html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>EventManager — управление мероприятиями</title><link rel="stylesheet" href="css/styles.css"></head>
+<body><div class="layout"><aside class="sidebar"><div class="brand">✦ EventManager</div><div class="nav-heading">УПРАВЛЕНИЕ</div><a class="nav active" href="#events">▦ Каталог мероприятий</a><a class="nav" href="#create">＋ Создать мероприятие</a><div class="side-note">Лабораторная работа №5<br>Клиентская логика · Mock API</div></aside>
+<main class="main"><header class="top"><div><span class="eyebrow">ПАНЕЛЬ ОРГАНИЗАТОРА</span><h1>Управление мероприятиями</h1><p class="subtitle">Создавайте события и управляйте их публикацией в одном месте.</p></div><span class="avatar">EM</span></header>
+<section class="stats"><div class="stat"><span>Всего на странице</span><strong id="counter">0</strong></div><div class="stat"><span>Опубликовано</span><strong id="published-counter">0</strong></div><div class="stat"><span>Черновиков</span><strong id="draft-counter">0</strong></div></section>
+<section class="panel" id="create"><div class="section-head"><div><span class="eyebrow">НОВОЕ СОБЫТИЕ</span><h2>Создать мероприятие</h2></div><span class="hint">Все поля обязательны</span></div><form id="event-form" novalidate><div class="form-grid"><div class="field wide"><label for="event-title">Название мероприятия</label><input id="event-title" type="text" placeholder="Например, конференция по дизайну"><small class="error" id="error-title"></small></div><div class="field"><label for="event-category">Категория</label><select id="event-category"><option value="conference">Конференция</option><option value="workshop">Мастер-класс</option><option value="hackathon">Хакатон</option><option value="meeting">Встреча</option></select></div><div class="field"><label for="event-date">Дата проведения</label><input id="event-date" type="date"></div><div class="field"><label for="event-venue">Площадка</label><input id="event-venue" type="text" placeholder="Название площадки"><small class="error" id="error-venue"></small></div><div class="field"><label for="event-capacity">Количество мест</label><input id="event-capacity" type="number" min="1" placeholder="100"><small class="error" id="error-capacity"></small></div></div><small class="error" id="error-date"></small><div class="form-actions"><button type="submit" class="primary" id="submit-button">＋ Создать мероприятие</button><span class="hint">Новое событие сохраняется как черновик</span></div></form></section>
+<section class="panel" id="events"><div class="section-head"><div><span class="eyebrow">СПИСОК СОБЫТИЙ</span><h2>Каталог мероприятий</h2></div><button id="refresh-button" class="outline">↻ Загрузить с сервера</button></div><div class="toolbar"><label class="search-wrap"><span>⌕</span><input id="search-input" type="search" placeholder="Поиск по названию, площадке..."></label><select id="status-filter" aria-label="Фильтр по статусу"><option value="">Все статусы</option><option value="draft">Черновик</option><option value="published">Опубликовано</option><option value="cancelled">Отменено</option></select><select id="category-filter" aria-label="Фильтр по категории"><option value="">Все категории</option><option value="conference">Конференция</option><option value="workshop">Мастер-класс</option><option value="hackathon">Хакатон</option><option value="meeting">Встреча</option></select></div><div id="info" class="message" role="status" aria-live="polite">Загрузка…</div><div class="table-wrap"><table id="event-table" hidden><thead><tr><th>Мероприятие</th><th>Дата / площадка</th><th>Категория</th><th>Статус</th><th>Мест</th><th>Действия</th></tr></thead><tbody id="event-body"></tbody></table></div></section><footer>EventManager · Учебный проект · Данные хранятся до обновления страницы</footer></main></div>
+<script src="js/mock-data.js"></script><script src="js/mock-api.js"></script><script src="js/app.js"></script></body></html>
