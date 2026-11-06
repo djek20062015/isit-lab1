@@ -1,0 +1,15 @@
+@startuml
+skinparam componentStyle rectangle
+actor "Пользователь" as U
+component "Клиент HTML/CSS/JS" as C
+component "PHP REST API" as A
+component "Авторизация и роли" as Auth
+database "PostgreSQL 16
+eventapp" as DB
+U --> C : действия в браузере
+C --> A : fetch + JSON + Bearer
+A --> Auth : проверка токена
+Auth --> DB : хеш токена и роль
+A --> DB : PDO / prepared statements
+A --> C : JSON / HTTP status
+@enduml

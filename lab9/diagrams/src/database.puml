@@ -1,0 +1,19 @@
+@startuml
+hide circle
+skinparam linetype ortho
+entity "organizers" as organizers { * id : SERIAL <<PK>> -- * full_name : VARCHAR(120) * email : VARCHAR(255) <<UQ>> phone : VARCHAR(30) created_at : TIMESTAMPTZ }
+entity "venues" as venues { * id : SERIAL <<PK>> -- * name : VARCHAR(150) <<UQ>> * address : TEXT * capacity : INTEGER }
+entity "categories" as categories { * id : SERIAL <<PK>> -- * name : VARCHAR(100) <<UQ>> description : TEXT }
+entity "events" as events { * id : SERIAL <<PK>> -- * venue_id : INTEGER <<FK>> * category_id : INTEGER <<FK>> organizer_id : INTEGER <<FK>> * title : VARCHAR(200) * status : VARCHAR(20) * starts_at : TIMESTAMPTZ * ends_at : TIMESTAMPTZ * ticket_price : NUMERIC(12,2) }
+entity "event_details" as details { * event_id : INTEGER <<PK, FK>> -- * agenda : TEXT contact_email : VARCHAR(255) online_url : TEXT }
+entity "registrations" as registrations { * id : SERIAL <<PK>> -- * event_id : INTEGER <<FK>> * attendee_name : VARCHAR(120) * attendee_email : VARCHAR(255) * status : VARCHAR(20) }
+entity "tags" as tags { * id : SERIAL <<PK>> -- * name : VARCHAR(60) <<UQ>> }
+entity "event_tags" as event_tags { * event_id : INTEGER <<PK, FK>> * tag_id : INTEGER <<PK, FK>> }
+venues ||--o{ events : venue_id
+categories ||--o{ events : category_id
+organizers |o--o{ events : organizer_id
+events ||--o| details : 1:1
+events ||--o{ registrations : 1:N
+events ||--o{ event_tags : N:M
+tags ||--o{ event_tags : N:M
+@enduml
