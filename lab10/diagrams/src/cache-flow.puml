@@ -1,0 +1,26 @@
+@startuml
+actor "Клиент" as C
+participant "PHP REST API" as API
+database "PostgreSQL" as DB
+participant "Redis" as R
+C -> API : GET + Bearer
+API -> DB : Проверка токена
+API -> R : PING
+alt Redis доступен, кеш включён
+  API -> DB : Чтение актуальной версии
+  API -> R : GET версионного ключа
+  alt Ключ найден
+    API --> C : JSON · X-Cache: HIT
+  else Ключ отсутствует
+    API -> DB : Запрос данных
+    API -> R : SETEX + TTL
+    API --> C : JSON · X-Cache: MISS
+  end
+else Redis недоступен или отключён
+  API -> DB : Запрос данных
+  API --> C : JSON · X-Cache: BYPASS
+end
+C -> API : POST / PATCH / DELETE
+API -> DB : Изменение данных + новая версия в одной транзакции
+API --> C : Результат операции
+@enduml

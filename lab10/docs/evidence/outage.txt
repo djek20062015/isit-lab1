@@ -1,0 +1,24 @@
+$ GET /api/events/1
+HTTP/1.1 200 OK
+X-Cache: MISS
+title: Форум цифровых технологий
+$ GET /api/events/1
+HTTP/1.1 200 OK
+X-Cache: HIT
+title: Форум цифровых технологий
+$ redis-cli SHUTDOWN SAVE
+$ GET /api/events/1
+HTTP/1.1 200 OK
+X-Cache: BYPASS
+title: Форум цифровых технологий
+$ PATCH /api/events/1
+HTTP 200
+$ redis-server …
+$ GET /api/events/1
+HTTP/1.1 200 OK
+X-Cache: MISS
+title: Форум после восстановления Redis
+$ GET /api/events/1
+HTTP/1.1 200 OK
+X-Cache: HIT
+title: Форум после восстановления Redis

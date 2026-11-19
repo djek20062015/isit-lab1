@@ -1,0 +1,10 @@
+$ php bin/redis-check.php
+Redis отвечает: PONG, версия 7.0.15
+$ redis-cli PING
+PONG
+$ php bin/cache-demo.php
+Вызов 1: MISS, 700.43 мс, значение {"value":"example"}
+Вызов 2: HIT, 0.09 мс, значение {"value":"example"}
+Вызов 3: HIT, 0.05 мс, значение {"value":"example"}
+$ redis-cli TTL eventapp:demo:slow
+33

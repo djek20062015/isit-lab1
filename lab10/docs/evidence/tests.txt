@@ -1,0 +1,69 @@
+PASS Нет токена
+PASS Неверный пароль
+PASS Вход руководителя
+PASS Токен 64 символа
+PASS Нет password_hash при входе
+PASS Кто я
+PASS Список events
+PASS Список events — массив
+PASS Список venues
+PASS Список venues — массив
+PASS Список categories
+PASS Список categories — массив
+PASS Отсутствующая запись
+PASS Недопустимый метод
+PASS Невалидный JSON
+PASS Ошибка полей
+PASS Вход редактора
+PASS Редактор не удаляет
+PASS Редактор не создаёт площадки
+PASS Наблюдатель не создаёт мероприятия
+PASS Создание мероприятия
+PASS Заголовок Location
+PASS Чтение созданного
+PASS Изменение PATCH
+PASS Изменение PUT
+PASS Фильтр статуса
+PASS Поиск
+PASS Удаление мероприятия
+PASS Повторное удаление
+PASS Создание площадки
+PASS Изменение площадки
+PASS Удаление площадки
+PASS Создание категории
+PASS Изменение категории
+PASS Удаление категории
+PASS Защита связанной площадки
+PASS Redis доступен тестам
+PASS Очистка кеша приложения
+PASS /api/reports/summary: 200 и MISS
+PASS /api/reports/summary: HIT и идентичные данные
+PASS /api/events?status=planned: 200 и MISS
+PASS /api/events?status=planned: HIT и идентичные данные
+PASS /api/events/1: 200 и MISS
+PASS /api/events/1: HIT и идентичные данные
+PASS /api/venues: 200 и MISS
+PASS /api/venues: HIT и идентичные данные
+PASS /api/categories: 200 и MISS
+PASS /api/categories: HIT и идентичные данные
+PASS TTL отчёта в диапазоне 1–138 с
+PASS Фильтры дают отдельные ключи и разные данные
+PASS Принудительный BYPASS возвращает те же данные
+PASS POST для проверки кеша
+PASS POST инвалидирует список
+PASS POST инвалидирует отчёт
+PASS PATCH для проверки кеша
+PASS PATCH инвалидирует карточку
+PASS PATCH инвалидирует список
+PASS DELETE для проверки кеша
+PASS Удалённая карточка недоступна
+PASS DELETE инвалидирует отчёт
+PASS PATCH площадки
+PASS PATCH площадки инвалидирует справочник и отчёт
+PASS PATCH категории
+PASS PATCH категории инвалидирует только её справочник
+PASS Выход
+PASS Токен отозван
+PASS Ответ без password_hash
+
+Итого: 67 PASS, 0 FAIL
