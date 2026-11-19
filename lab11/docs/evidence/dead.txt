@@ -1,0 +1,12 @@
+37cf52a5-f137-4fda-9d12-01e1bcbbf485
+Воркер default · PID 216 · возвращено в очередь: 0
+37cf52a5-f137-4fda-9d12-01e1bcbbf485 · demo · попытка 1
+37cf52a5-f137-4fda-9d12-01e1bcbbf485 · Демонстрационная ошибка · повтор через 2 с
+37cf52a5-f137-4fda-9d12-01e1bcbbf485 · demo · попытка 2
+37cf52a5-f137-4fda-9d12-01e1bcbbf485 · Демонстрационная ошибка · повтор через 4 с
+37cf52a5-f137-4fda-9d12-01e1bcbbf485 · demo · попытка 3
+37cf52a5-f137-4fda-9d12-01e1bcbbf485 · Демонстрационная ошибка · мёртвая очередь
+Воркер завершён
+default {"ready":0,"working":0,"delayed":0,"dead":1}
+dead {"id":"37cf52a5-f137-4fda-9d12-01e1bcbbf485","type":"demo","payload":{"mode":"fail","seconds":1},"attempt":3,"created_at":"2026-11-19T22:07:07+00:00","last_error":"Демонстрационная ошибка"}
+reports {"ready":0,"working":0,"delayed":0,"dead":0}

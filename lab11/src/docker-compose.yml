@@ -1,0 +1,30 @@
+name: eventmanager-lab11
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: eventapp11
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: secret
+    ports:
+      - "127.0.0.1:${DB_PORT:-5433}:5432"
+    volumes:
+      - eventapp11_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d eventapp11"]
+      interval: 3s
+      retries: 15
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--appendonly", "yes"]
+    ports:
+      - "127.0.0.1:${REDIS_PORT:-6380}:6379"
+    volumes:
+      - eventapp11_redis:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "PING"]
+      interval: 2s
+      retries: 15
+volumes:
+  eventapp11_data:
+  eventapp11_redis:

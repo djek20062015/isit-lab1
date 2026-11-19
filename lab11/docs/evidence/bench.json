@@ -1,0 +1,72 @@
+[
+    {
+        "trial": 1,
+        "mode": "sync",
+        "patch_ms": 2013.825141,
+        "post_ms": 346.016713,
+        "report_ready_ms": 346.016713
+    },
+    {
+        "trial": 1,
+        "mode": "async",
+        "patch_ms": 19.280723,
+        "post_ms": 23.498151,
+        "report_ready_ms": 513.69536
+    },
+    {
+        "trial": 2,
+        "mode": "sync",
+        "patch_ms": 2011.622016,
+        "post_ms": 434.139739,
+        "report_ready_ms": 434.139739
+    },
+    {
+        "trial": 2,
+        "mode": "async",
+        "patch_ms": 14.06546,
+        "post_ms": 13.026635,
+        "report_ready_ms": 422.261352
+    },
+    {
+        "trial": 3,
+        "mode": "sync",
+        "patch_ms": 2019.875523,
+        "post_ms": 426.58416,
+        "report_ready_ms": 426.58416
+    },
+    {
+        "trial": 3,
+        "mode": "async",
+        "patch_ms": 16.761257,
+        "post_ms": 12.444143,
+        "report_ready_ms": 426.225704
+    },
+    {
+        "trial": 4,
+        "mode": "sync",
+        "patch_ms": 2024.501797,
+        "post_ms": 783.662797,
+        "report_ready_ms": 783.662797
+    },
+    {
+        "trial": 4,
+        "mode": "async",
+        "patch_ms": 24.759474,
+        "post_ms": 25.567079,
+        "report_ready_ms": 411.13739
+    },
+    {
+        "trial": 5,
+        "mode": "sync",
+        "patch_ms": 2019.368712,
+        "post_ms": 594.361992,
+        "report_ready_ms": 594.361992
+    },
+    {
+        "trial": 5,
+        "mode": "async",
+        "patch_ms": 14.196936,
+        "post_ms": 16.317532,
+        "report_ready_ms": 442.079909
+    }
+]

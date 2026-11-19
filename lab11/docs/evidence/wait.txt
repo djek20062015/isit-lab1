@@ -1,0 +1,14 @@
+$ PATCH /api/events/1, worker остановлен
+HTTP/1.1 200 OK
+X-Job-Id: a6a8b64b-8453-4672-82a0-3f55577e6393
+default {"ready":1,"working":0,"delayed":0,"dead":0}
+ready {"id": "a6a8b64b-8453-4672-82a0-3f55577e6393", "type": "notification", "attempt": 0, "payload": {"title": "Форум цифровых технологий", "actor_id": 2, "event_id": 1, "new_status": "completed", "old_status": "planned"}, "created_at": "2026-11-19T22:08:00+00:00"}
+reports {"ready":0,"working":0,"delayed":0,"dead":0}
+$ GET /api/notifications
+[]
+Воркер default · PID 274 · возвращено в очередь: 0
+a6a8b64b-8453-4672-82a0-3f55577e6393 · notification · попытка 1
+a6a8b64b-8453-4672-82a0-3f55577e6393 · готово за 0.004 с
+Воркер завершён
+$ GET /api/notifications
+[{"job_id":"a6a8b64b-8453-4672-82a0-3f55577e6393","message":"Мероприятие «Форум цифровых технологий» (№ 1): planned → completed","created_at":"2026-11-20 01:08:00.719179+03"}]

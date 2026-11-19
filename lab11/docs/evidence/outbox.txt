@@ -1,0 +1,13 @@
+$ redis-cli SHUTDOWN
+$ PATCH /api/events/1
+HTTP/1.1 200 OK
+X-Job-Id: 67530b6b-dd92-42d1-8c54-22e68ca10aed
+$ SELECT count(*) FROM job_outbox
+1
+Воркер default · PID 296 · возвращено в очередь: 0
+67530b6b-dd92-42d1-8c54-22e68ca10aed · notification · попытка 1
+67530b6b-dd92-42d1-8c54-22e68ca10aed · готово за 0.007 с
+Воркер завершён
+$ SELECT count(*) FROM job_outbox
+0
+[{"job_id":"67530b6b-dd92-42d1-8c54-22e68ca10aed","message":"Мероприятие «Форум цифровых технологий» (№ 1): completed → active","created_at":"2026-11-20 01:08:02.067087+03"},{"job_id":"a6a8b64b-8453-4672-82a0-3f55577e6393","message":"Мероприятие «Форум цифровых технологий» (№ 1): planned → completed","created_at":"2026-11-20 01:08:00.719179+03"}]

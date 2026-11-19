@@ -1,0 +1,13 @@
+$ php bin/queue-demo.php 1 --slow
+5bfe5544-1fd0-4f98-813f-016c0a7ee77b
+Воркер default · PID 226 · возвращено в очередь: 0
+5bfe5544-1fd0-4f98-813f-016c0a7ee77b · demo · попытка 1
+$ kill -9 226
+default {"ready":0,"working":1,"delayed":0,"dead":1}
+reports {"ready":0,"working":0,"delayed":0,"dead":0}
+Воркер default · PID 236 · возвращено в очередь: 1
+5bfe5544-1fd0-4f98-813f-016c0a7ee77b · demo · попытка 1
+5bfe5544-1fd0-4f98-813f-016c0a7ee77b · готово за 20.001 с
+Воркер завершён
+default {"ready":0,"working":0,"delayed":0,"dead":1}
+reports {"ready":0,"working":0,"delayed":0,"dead":0}

@@ -1,0 +1,9 @@
+$ php bin/queue-demo.php 1 --slow
+6daaa563-7a0a-4292-8f24-676ddd40e003
+$ kill -TERM 245
+Воркер default · PID 245 · возвращено в очередь: 0
+6daaa563-7a0a-4292-8f24-676ddd40e003 · demo · попытка 1
+6daaa563-7a0a-4292-8f24-676ddd40e003 · готово за 20.004 с
+Воркер завершён
+default {"ready":0,"working":0,"delayed":0,"dead":1}
+reports {"ready":0,"working":0,"delayed":0,"dead":0}
